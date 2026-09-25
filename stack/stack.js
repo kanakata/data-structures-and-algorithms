@@ -5,7 +5,7 @@ class Stack {
   #dataset = [];
   #count = 0;
   /**
-   * adds an element into a stack
+   * adds an element to a stack
    * @param {*} element
    */
   push(element) {
@@ -29,7 +29,7 @@ class Stack {
     return this.#dataset[this.#count - 1];
   }
   /**
-   * removes all the elements in a stack
+   * Removes all the elements in a stack
    */
   clear() {
     this.#dataset = [];
