@@ -1,4 +1,4 @@
-// an array is a liner collection of elements
+// an array is a linear collection of elements
 // elements do not have to be of the same type.
 // creating arrays
 var arr = []; // method one length = 0 NOTE: recommended more efficient
@@ -28,7 +28,7 @@ var words = sentence.split(' '); // returns ["my", "name", "is", "jane", "doe"]
 // assigning one array to another
 // 1) shallow copy
 var array_one = [1, 2, 3];
-var array_two = array_one; // NOTE: this only acts as a reference i.e altering array_one alters array_two
+var array_two = array_one; // NOTE: this only acts as a reference, i.e altering array_one alters array_two
 
 // 2) deep copy
 function copy(arr1, arr2) {
@@ -42,7 +42,7 @@ var arr2 = [];
 copy(arr1, arr2);
 
 // accessor functions
-// searching for an element using indexof()
+// searching for an element using indexOf ()
 var people = ['jane', 'joe', 'john', 'job', 'jesse', 'john'];
 var person = 'john';
 var position = people.indexOf(person);
@@ -51,9 +51,9 @@ if (position >= 0) {
 } else {
   console.log('person not found');
 }
-// NOTE: indexof() returns position of the first occurrence and returns -1 if o match is found.
+// NOTE: indexOf () returns the position of the first occurrence and returns -1 if no match is found.
 
-// searching for an element using lastindexof()
+// searching for an element using lastIndexOf ()
 var people = ['john', 'joe', 'john'];
 var person = 'john';
 var position = people.lastIndexOf(person);
@@ -62,7 +62,7 @@ if (position >= 0) {
 } else {
   console.log('person not found');
 }
-// NOTE: lastIndexof() returns position of the last occurrence and returns -1 if o match is found.
+// NOTE: lastIndexOf () returns the position of the last occurrence and returns -1 if no match is found.
 
 // returning string representation of an array (method join())
 var people = ['jane', 'joe', 'john'];
@@ -148,7 +148,7 @@ arr.sort(order);
 console.log(arr); // returns [1,2,3,4,5]
 
 // iterator functions
-// 1) non array generating iterator functions
+// 1) non-array-generating iterator functions
 // a) foreach()
 function square(num) {
   console.log(num ** 2); // returns [1,4,9,16]
@@ -196,7 +196,7 @@ var arr = [1, 2, 3, 4];
 var sum = arr.reduceRight(add);
 console.log(sum); // returns 10
 
-// 2) iterator functions that returns new array
+// 2) iterator functions that return a new array
 // a) map()
 function add(num) {
   return num * 2;
@@ -221,7 +221,7 @@ for (var i = 0; i <= 5; i++) {
 }
 console.log(two_dimention_array); // returns [[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]];
 
-// processing two dimentional array elements
+// processing two-dimensional array elements
 // columnar processing
 var grades = [
   [89, 77, 78],
@@ -242,7 +242,7 @@ for (var row = 0; row < grades.length; ++row) {
   average = 0.0;
 }
 
-// rowise processing
+//row-wise processing
 var grades = [
   [89, 77, 78],
   [76, 82, 81],
@@ -261,7 +261,7 @@ for (var col = 0; col < grades.length; ++col) {
 }
 
 // jagged arrays
-// are arrays where the inner array length are not equal.
+// are arrays where the inner array lengths are not equal.
 var grades = [
   [89, 77],
   [76, 82, 81],
