@@ -1,3 +1,6 @@
+/**
+ * Binary search tree implementation.
+ */
 class Node {
   constructor(data, left = null, right = null) {
     this.data = data;
@@ -10,6 +13,11 @@ class BST {
   constructor() {
     this.root = null;
   }
+  /**
+   * add s data to the tree
+   * @param {*} data
+   * @returns
+   */
   add(data) {
     const parentNode = this.root;
     if (parentNode == null) {
@@ -38,6 +46,9 @@ class BST {
       return searchTree(parentNode);
     }
   }
+  /**
+   * @returns
+   */
   findMin() {
     let currentNode = this.root;
     while (currentNode.left != null) {
@@ -45,6 +56,9 @@ class BST {
     }
     return currentNode.data;
   }
+  /**
+   * @returns
+   */
   findMax() {
     let currentNode = this.root;
     while (currentNode.right != null) {
@@ -72,6 +86,11 @@ class BST {
     }
     return currentNode;
   }
+  /**
+   * checks if data is present in a tree.
+   * @param {*} data
+   * @returns
+   */
   isPresent(data) {
     let currentNode = this.root;
     while (currentNode) {
@@ -86,6 +105,9 @@ class BST {
     }
     return false;
   }
+  /**
+   * @param {*} data
+   */
   remove(data) {
     const removeNode = function (node, data) {
       if (node == null) {
@@ -119,4 +141,34 @@ class BST {
     };
     this.root = removeNode(this.root, data);
   }
+  isBalanced() {
+    return this.findMinHeight() >= this.findMaxHeight() - 1;
+  }
+  findMinHeight(node = this.root) {
+    if (node == null) {
+      return -1;
+    }
+    let left = this.findMinHeight(node.left);
+    let right = this.findMinHeight(node.right);
+    if (left < right) {
+      return left + 1;
+    } else {
+      return right + 1;
+    }
+  }
+  findMaxHeight(node = this.root) {
+    if (node == null) {
+      return -1;
+    }
+    let left = this.findMinHeight(node.left);
+    let right = this.findMinHeight(node.right);
+    if (left > right) {
+      return left + 1;
+    } else {
+      return right + 1;
+    }
+  }
+  inOrder() {}
+  perOrder() {}
+  postOrder() {}
 }

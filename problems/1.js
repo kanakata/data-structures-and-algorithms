@@ -9,6 +9,7 @@ function Grades() {
 function add(grade) {
   this.grades.push(grade);
 }
+
 function average() {
   let sum = 0;
   for (let i = 0; i < this.grades.length; i++) {

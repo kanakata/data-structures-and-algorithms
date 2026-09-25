@@ -1,2 +1,1 @@
-# DSA NOTES FROM O'REILLY
-## Data Structures & Algorithms with JavaScript
+# Data Structures & Algorithms Implemented In JavaScript
